@@ -9,6 +9,7 @@ import static org.hamcrest.CoreMatchers.is;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.JavascriptExecutor;
@@ -27,8 +28,12 @@ public class D3Test {
 
     @Before
     public void setUp() {
+        // WebDriverManager.chromedriver().setup();
+
+        // Create ChromeOptions object
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
+
         driver = new ChromeDriver(options);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
