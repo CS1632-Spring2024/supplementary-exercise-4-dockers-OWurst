@@ -42,3 +42,6 @@ jobs:
 
       - name: Run Selenium Tests
         run: cd selenium && mvn test
+
+      - name: wait
+        run: ./wait-for-webserver.sh
